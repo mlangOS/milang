@@ -1,0 +1,32 @@
+---
+design
+-- design ideals for milang
+---
+
+---
+ideals
+-- quick compilation
+---- compiling can be done quickly with only a single command via curl
+-- library support
+-- static linking only
+---- milang requires that any functions be isolated
+---- and imported directly before use
+---- imports persist per function
+---- imports must define the function name and its location
+-- extension support
+---- existing projects can be extended without forking
+---- with use of patches (once shdiff is made)
+-- runtime recompile support
+---- users can recompile at runtime (if enabled and curl is present)
+---- to changes enabled features at runtime
+-- custom simple syntax based on shell
+---- milang uses a syntax based on shell without its issues
+---- no fi, no ;;, no do
+-- bootstrap-less
+---- milang runs on sh and produces sh
+-- single dependency
+---- milang only directly depends on sh
+-- unit testing
+---- shunits allows testing of the env for different freatures
+---- and compiling based on them, gnu-configure but better
+---

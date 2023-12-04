@@ -1,0 +1,26 @@
+func.flags() {
+# used to handle flags
+  #flag."--help,-h": {
+  #  # --help flag
+  #}
+  #flag."--verbose,-v": {
+  #  # --verbose flag
+  #}
+  flag."--number,-n": {
+    # --number/-n flag
+    # number each line
+  }
+}
+
+func.import() {
+  import.path: "./functions"
+  # import all .mla files in ./functions
+  # this will actually be done by default 
+  # but this is helpful as an example
+}
+
+func.main() {
+# main function 
+# should only be used to call other functions
+  func.cat "$@"
+}

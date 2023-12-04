@@ -1,0 +1,33 @@
+func.init() {
+  # used to init variables
+
+}
+
+func.main() {
+
+  #options.SCOPE
+  # options.SCOPE disables/enables variable scoping
+  # by default shell has no variable scoping except for subshells
+  # however milang auto unset's all used variables after each loop, and function
+  # rather than sharing variables arguments should be used to pass variables
+  # having options.SCOPE disabled is inherently insecure
+  for.arg in "$@"
+    for.line in "$arg" -- options.COUNTER
+      printf '%s\n' "$counter" "$line"
+    done    
+  done
+}
+##
+# this is basically
+##
+# main() {
+#   for arg in "$@"; do
+#     while read -r line | [ "$line" ]; do
+#       printf '%s\n' "$line"
+#     done
+#   done
+# }
+#
+# the idea is that while read loops are annoyingly complex
+# simply making for loops handle everything is better
+# while loops are still present, but provide no options
